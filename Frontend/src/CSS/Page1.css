@@ -1,0 +1,79 @@
+.page1{
+    width: 100%;
+    height: 100vh;
+    background-color: #bebebe;
+    text-align: center;
+    padding: 4% 6%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+}
+
+.jobListingTitle{
+    font-size: min(5vw,3rem);
+    font-weight: 500;
+}
+.jobListingCompanies{
+    list-style-type: none;
+    display: flex;
+    width: min(85vw,100%);
+    height: min(50vw,10%);
+    gap: 2%;
+    align-items: center;
+    padding: 0;
+}
+.company{
+    width: min(8vw,92%);
+    margin: 20% 0;
+}
+.jobListingImgContainer{
+    width: 100%;
+    height: min(60vw,70%);
+    position: relative;
+}
+.jobListingImg{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(50%);
+    border-radius: 12px;
+}
+.jobListingImgTitle{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: min(5vw,300%);
+    font-weight: 500;
+    color: white;
+}
+@media (max-width:1000px) {
+    .jobListingTitle{
+        font-size: min(5vw,200%);
+        font-weight: 500;
+    }
+    .jobListingCompanies{
+        list-style-type: none;
+        display: flex;
+        width: min(85vw,100%);
+        height: min(50vw,10%);
+        gap: 2%;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 0;
+        margin-top: min(8vw,1rem);
+        margin-bottom: min(16vw,10%);
+    }
+    .jobListingCompanies>li{
+        width: min(15vw,70%);
+    }
+    .company{
+        width: min(15vw,70%);
+        margin: min(14%,1rem) 0;
+    }
+}

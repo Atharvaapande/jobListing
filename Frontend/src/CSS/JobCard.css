@@ -1,0 +1,50 @@
+.jobCardWrap{
+    width: 32vw;
+    height: 25vw;
+    border: 1px solid gray;
+    border-radius: 12px;
+    text-align: start;
+    padding: 24px 26px;
+    background-color: white;
+    filter: drop-shadow(1rem 1rem 1rem rgba(0, 0, 0, 0.363));
+}
+.jobType{
+    color: rgb(69, 69, 69);
+    font-size: 0.9vw;
+}
+.jobTitle{
+    font-weight: 500;
+    margin-bottom: 1vw;
+    font-size: 1.4vw;
+}
+.showDescriptionBtn{
+    border: 1px solid gray;
+    border-radius: 6px;
+    padding: 1% 2%;
+    font-weight: 600;
+    margin-bottom: 0.2vw;
+    font-size: 0.8vw;
+}
+.jobDescription{
+    font-size: 0.9vw;
+    margin-bottom: 1vw;
+}
+.jobButton{
+    width: 100%;
+    padding: 2% 6%;
+    background-color: black;
+    color: white;
+    border-radius: 12px;
+    border: none;
+    margin-top: 1vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2vw;
+}
+.jobLocation{
+    font-size: 0.9vw;
+}
+.jobSalary{
+    font-size: 0.9vw;
+}

@@ -2,11 +2,15 @@
     width: 100%;
     height: 100vh;
     position: sticky;
-    padding: 4% 2%;
+    padding: 4% 1%;
     text-align: center;
     top: 0;
     background-color: #bebebe;
     z-index: 40;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 .jobsPage{
     width: 100%;
@@ -19,24 +23,49 @@
 }
 .page3Title{
     color: black;
-    font-size: min(5vw,200%);
+    font-size: min(3vw,3rem);
     font-weight: 500;
-    margin-bottom: 4rem;
+    margin-bottom: 0.5rem;
 }
 .jobList{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 1vw;
+    gap: 0.5vw;
 }
 .moreJobs{
     border: none;
     background-color: #bebebe;
-    margin-top: 4rem;
-    font-size: min(5vw,200%);
+    margin-top: 0.5rem;
+    font-size: min(3vw,3rem);
     letter-spacing: 0.4rem;
 }
 .moreJobs:hover{
     text-decoration: underline;
+}
+@media (max-width:1426px) {
+    .jobList{
+        flex-direction: column;
+        flex-wrap: nowrap;
+        gap: 0.5vw;
+    }
+    .page3Title{
+        color: black;
+        font-size: min(5vw,200%);
+        font-weight: 500;
+        margin-bottom: 0.4rem;
+    }
+    .moreJobs{
+        border: none;
+        background-color: #bebebe;
+        margin-top: 0.5rem;
+        font-size: min(5vw,200%);
+        letter-spacing: 0.4rem;
+    }
+}
+@media (max-height:1000px) {
+    .page3{
+        height: max-content;
+    }
 }

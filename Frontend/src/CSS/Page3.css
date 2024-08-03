@@ -1,17 +1,3 @@
-.page3{
-    width: 100%;
-    height: 100vh;
-    position: sticky;
-    padding: 4% 1%;
-    text-align: center;
-    top: 0;
-    background-color: #bebebe;
-    z-index: 40;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
 .jobsPage{
     width: 100%;
     height: max-content;
@@ -32,25 +18,16 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 0.5vw;
+    gap: 0.4vw;
 }
-.moreJobs{
-    border: none;
-    background-color: #bebebe;
-    margin-top: 0.5rem;
-    font-size: min(3vw,3rem);
-    letter-spacing: 0.4rem;
-}
-.moreJobs:hover{
-    text-decoration: underline;
-}
-@media (max-width:1426px) {
+
+@media (max-width:1000px) {
     .jobList{
         flex-direction: column;
         flex-wrap: nowrap;
-        gap: 0.5vw;
+        gap: 0.4vw;
     }
-    .page3Title{
+    /* .page3Title{
         color: black;
         font-size: min(5vw,200%);
         font-weight: 500;
@@ -62,10 +39,56 @@
         margin-top: 0.5rem;
         font-size: min(5vw,200%);
         letter-spacing: 0.4rem;
-    }
+    } */
 }
-@media (max-height:1000px) {
-    .page3{
-        height: max-content;
+
+/* For home page */
+.page3{
+    width: 100%;
+    height: 100vh;
+    position: sticky;
+    padding: 4% 1%;
+    text-align: center;
+    top: 0;
+    background-color: #bebebe;
+    z-index: 40;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.page3TitleHome{
+    color: rgb(0, 0, 0);
+    font-size: min(3.5vw,3rem);
+    font-weight: 500;
+    margin-bottom: min(0.5rem,0.2vw);
+}
+.jobListHome{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4vw;
+}
+.moreJobs{
+    border: none;
+    background-color: #bebebe;
+    margin-top: min(2rem,1vw);
+    font-size: min(3.5vw,150%);
+    letter-spacing: 0.4rem;
+}
+.moreJobs:hover{
+    text-decoration: underline;
+}
+@media (max-width:1438px) {
+    .jobListHome{
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .page3TitleHome{
+        font-size: min(5vw,200%);
+        margin: 0;
+    }
+    .moreJobs{
+        margin: 0;
     }
 }

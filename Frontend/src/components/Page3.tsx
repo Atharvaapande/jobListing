@@ -9,23 +9,23 @@ interface Props{
     isHome:boolean;
 }
 
-export function Page3({isHome=false}:Props){
+export function Page3({isHome}:Props){
     const[jobs,setJobs] = useState<Array<any> | null>(null);
 
     useEffect(()=>{
-        fetch('http://localhost:3001/getJobs',{headers: {
+        fetch('/api/getJobs/',{headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
         }})
         .then(res=>res.json())
-        .then(data=>{setJobs(data); console.log(data)})
+        .then(data=>{setJobs(data)})
     },[])
 
     return (
         <>
             <div className={isHome?"page3":'jobsPage'}>
-                <h1 className="page3Title">{isHome?'For Talents':'Browse Jobs'}</h1>
-                <div className='jobList'>
+                <h1 className={isHome?"page3TitleHome":'page3Title'}>{isHome?'For Talents':'Browse Jobs'}</h1>
+                <div className={isHome?'jobListHome':'jobList'}>
                     {isHome?jobs?.slice(0,3).map((job)=>(
                         <JobCard isHome={isHome} key={job._id} type={job.type} title={job.title} description={job.description} location={job.location} salary={job.salary}/>
                     )):jobs?.map((job)=>(

@@ -44,7 +44,6 @@
 .jobCardWrapHome div div{
     display: flex;
     gap: 5vw;
-    /* flex-direction: column; */
 }
 .jobCardWrapHome div div div{
     gap: 0;
@@ -76,7 +75,6 @@
 }
 .jobButton{
     width: min(30vw,14rem);
-    /* width: max-content; */
     padding: 3% 6%;
     background-color: black;
     color: white;
@@ -97,7 +95,6 @@
 @media (max-width:1438px) {
     .jobCardWrapHome{
         width: min(95vw);
-        /* height: min(40vw,11rem); */
         height: max-content;
         padding: 12px 12px;
     }
@@ -118,23 +115,11 @@
     }
     .jobButton{
         width: min(20vw,14rem);
-        /* width: max-content; */
         padding: 2% 6%;
-        background-color: black;
-        color: white;
-        border-radius: 12px;
-        border: none;
-        margin-top: 1vw;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         font-size: min(2.5vw,80%);
     }
     .showDescriptionBtn{
-        border: 1px solid gray;
-        border-radius: 6px;
         padding: 0.1% 2%;
-        font-weight: 600;
         margin-bottom: min(0.2vw,0.01rem);
         font-size: min(1.5vw,60%);
     }
@@ -148,14 +133,11 @@
 @media (max-width:1000px) {
     .jobCardWrap{
         width: min(90%,460vw);
-        /* height: min(45%,370px); */
         height: min(40vw,13rem);
         padding: 12px 12px;
     }
     .jobCardWrap div{
         display: flex;
-        /* justify-content: space-between; */
-        /* align-items: center; */
         margin-top: min(1vw,0.4rem);
     }
     .jobDescription{

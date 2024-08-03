@@ -27,19 +27,6 @@
         flex-wrap: nowrap;
         gap: 0.4vw;
     }
-    /* .page3Title{
-        color: black;
-        font-size: min(5vw,200%);
-        font-weight: 500;
-        margin-bottom: 0.4rem;
-    }
-    .moreJobs{
-        border: none;
-        background-color: #bebebe;
-        margin-top: 0.5rem;
-        font-size: min(5vw,200%);
-        letter-spacing: 0.4rem;
-    } */
 }
 
 /* For home page */

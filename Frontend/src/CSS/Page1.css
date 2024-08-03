@@ -54,18 +54,10 @@
 @media (max-width:1000px) {
     .jobListingTitle{
         font-size: min(5vw,200%);
-        font-weight: 500;
     }
     .jobListingCompanies{
-        list-style-type: none;
-        display: flex;
-        width: min(85vw,100%);
-        height: min(50vw,10%);
-        gap: 2%;
-        align-items: center;
         justify-content: space-between;
         flex-wrap: wrap;
-        padding: 0;
         margin-top: min(8vw,1rem);
         margin-bottom: min(16vw,10%);
     }

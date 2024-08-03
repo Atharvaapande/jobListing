@@ -1,4 +1,3 @@
-// import { JobCard } from "./JobCard";
 import '../CSS/Page1.css'
 
 export function Page1() {
@@ -31,10 +30,6 @@ export function Page1() {
                 <img className='jobListingImg' src="https://images.unsplash.com/photo-1719937206220-f7c76cc23d78?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
                 <h2 className="jobListingImgTitle">Hiring with JobSphere saves you time and money</h2>
             </div>
-            {/* <JobCard jobDuration="Full Time" jobTitle="Senior React Developer" jobDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam" jobLocation="Boston" jobPay="$ 120K" actionBtn="Read More"/>
-            <JobCard jobDuration="Remote" jobTitle="Frontend Developer" jobDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam" jobLocation="USA" jobPay="$ 70K" actionBtn="Read More"/>
-            <JobCard jobDuration="Remote" jobTitle="Backend Developer" jobDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam" jobLocation="USA" jobPay="$ 70K" actionBtn="Read More"/> */}
-            
         </div>
     )
 }

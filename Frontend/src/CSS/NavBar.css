@@ -3,7 +3,6 @@ header{
     color: #fff;
     z-index: 90;
     height: min(10vw,3.5rem);
-    /* height: 100%; */
     position: sticky;
     top: 0;
 }
@@ -16,9 +15,6 @@ header div{
     width: 100%;
     height: 100%;
 }
-/* header details{
-    position: relative;
-} */
 header details summary{
     list-style: none;
     font-size: min(3vw,100%);

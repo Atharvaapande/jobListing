@@ -27,7 +27,8 @@ header details ul{
     background-color: #fff;
     list-style: none;
     padding: 1vw 1vw;
-    border-radius: 12px;
+    border-bottom-left-radius: 22px;
+    border-bottom-right-radius: 22px;
 }
 .logo{
     font-weight: normal;

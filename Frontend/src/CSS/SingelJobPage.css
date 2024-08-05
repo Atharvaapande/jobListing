@@ -1,0 +1,87 @@
+.singelJobPage{
+    background-color: #bebebe;
+    height: max-content;
+    padding: 4% 6%;
+    display: flex;
+    flex-direction: column;
+    gap: 3vw;
+}
+.jobInfo{
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 2% 3%;
+    filter: drop-shadow(1rem 1rem 1rem rgba(0, 0, 0, 0.363));
+    flex: 2;
+    height: max-content;
+}
+.br{
+    display:block;
+    width: 90%;
+    height: 1px;
+    background-color: #bebebe;
+    margin: 2vw 0;
+}
+.jobInfoTitle{
+    font-weight: normal;
+    font-size: min(5vw,2rem);
+    margin: 1vw 0;
+}
+.jobInfoTitle2{
+    font-weight: 600;
+    font-size: min(3vw,1.5rem);
+    margin-bottom: 1vw;
+}
+.jobInfoDescriptionContent{
+    margin: 1vw 0;
+    font-size: min(3vw,1rem);
+}
+.companyInfo{
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 2% 3%;
+    filter: drop-shadow(1rem 1rem 1rem rgba(0, 0, 0, 0.363));
+    flex: 3;
+    width: min(100%,30rem);
+}
+.jobInfoWrap{
+    display: flex;
+    gap: 1vw;
+}
+.manageJob{
+    flex: 1;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 2% 3%;
+    filter: drop-shadow(1rem 1rem 1rem rgba(0, 0, 0, 0.363));
+}
+.manageJob button{
+    width: 100%;
+}
+.rightPanel{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    height: 80vh;
+}
+.leftPanel{
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+}
+
+@media (max-width:1160px) {
+    .jobInfoWrap{
+        flex-direction: column;
+    }
+    .companyInfo{
+        width: 100%;
+    }
+    .leftPanel{
+        width: 100%;
+    }
+    .jobSlider{
+        flex-direction: column;
+    }
+}

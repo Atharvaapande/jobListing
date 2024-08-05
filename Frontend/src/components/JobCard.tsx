@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom'
 import {FaExternalLinkSquareAlt,FaMapMarker} from 'react-icons/fa'
 
 interface Props {
+    id:string;
     type:string;
     title:string;
     description:string;
@@ -11,7 +12,7 @@ interface Props {
     salary:string;
     isHome:boolean;
 }
-export function JobCard({isHome,type,title,description,location,salary}:Props){
+export function JobCard({id,isHome,type,title,description,location,salary}:Props){
     const [showDescription,setShowDescription]=useState(false);
 
     return (
@@ -27,7 +28,7 @@ export function JobCard({isHome,type,title,description,location,salary}:Props){
                                 <p className="jobLocation"><FaMapMarker/> {location}</p>
                                 <p className="jobSalary">{salary}</p>
                             </div>
-                            <Link to={'/jobs'} className='Link'><button className='jobButton'>Read More <FaExternalLinkSquareAlt/></button></Link>
+                            <Link to={`/jobs/${id}`} className='Link'><button className='jobButton'>Read More <FaExternalLinkSquareAlt/></button></Link>
                         </div>
                 </div>
             </div>

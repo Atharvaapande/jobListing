@@ -1,31 +1,53 @@
-import { useState } from 'react'
-import '../CSS/AddJobScreen.css'
+import { useState } from "react"
 import {useNavigate} from 'react-router-dom'
 import {toast} from 'react-toastify'
+import { useLoaderData } from "react-router-dom"
 
 interface Props{
-    addFunction:(newJobs:object)=>void;
+    updateFunction:(para:any)=>void;
 }
 
-export function AddJobScreen({addFunction}:Props){
+interface Company {
+    name: string;
+    description: string;
+    contactEmail: string;
+    contactPhone: string;
+    _id: string;
+}
+
+interface Job {
+    _id: string;
+    title: string;
+    type: string;
+    description: string;
+    location: string;
+    salary: string;
+    company: Company;
+}
+
+export function UpdateJobScreen({updateFunction}:Props){
+    const job = useLoaderData() as Job;
+    
     const [jobForm,setJobForm] = useState({
-        jobType:'Full Time',
-        jobTitle:'',
-        jobDescription:'',
-        jobSalary:'under 50k',
-        joblocation:'',
-        companyName:'',
-        compannyDecsription:'',
-        companyEmail:'',
-        companyPhone:''
+        jobId:job._id,
+        jobType:job.type,
+        jobTitle:job.title,
+        jobDescription:job.description,
+        jobSalary:job.salary,
+        joblocation:job.location,
+        companyName:job.company.name,
+        companyDescription:job.company.description,
+        companyEmail:job.company.contactEmail,
+        companyPhone:job.company.contactPhone
     })
 
     const Navigate = useNavigate()
 
-    const handelSubmit = (e:React.FormEvent<HTMLFormElement>) =>{
+    const handelUpdate = (e:React.FormEvent<HTMLFormElement>) =>{
         e.preventDefault();
 
-        const newJob={
+        const updatedJob={
+            id:jobForm.jobId,
             title:jobForm.jobTitle,
             type:jobForm.jobType,
             description:jobForm.jobDescription,
@@ -33,22 +55,25 @@ export function AddJobScreen({addFunction}:Props){
             salary:jobForm.jobSalary,
             company:{
                 name:jobForm.companyName,
-                description:jobForm.compannyDecsription,
-                contactEmail:jobForm.companyEmail,
-                contactPhone:jobForm.companyPhone
+                description:jobForm.companyDescription,
+                email:jobForm.companyEmail,
+                phone:jobForm.companyPhone
             }
         }
-        addFunction(newJob); 
-        toast.success('Job Added Successfully!!')
-        return Navigate('/jobs')
+        updateFunction(updatedJob); 
+        toast.success('Job Updated Successfully!!')
+        return Navigate(`/jobs`);
     }
 
+    if (!job) {
+        return <div>Loading...</div>; // Or handle loading state appropriately
+    }
     return (
         <>
         <div className='ajp'>
             <div className="addJobPage">
-                <form onSubmit={handelSubmit}>
-                <h1>Add Job</h1>
+                <form onSubmit={handelUpdate}>
+                <h1>Update Job</h1>
                 <label htmlFor="jobs">Job Type:</label>
                 <select name="jobs" id="jobs" value={jobForm.jobType} onChange={(e)=>{
                     setJobForm(prev=>({
@@ -83,10 +108,10 @@ export function AddJobScreen({addFunction}:Props){
                         jobSalary:e.target.value
                     }))
                 }}>
-                    <option value="under">under 50k</option>
-                    <option value="between">between 50k to 75k</option>
-                    <option value="above">above 75k</option>
-                    <option value="confidenntial">Confidential</option>
+                    <option value="Under 50k">Under 50k</option>
+                    <option value="Between 50k to 75k">Between 50k to 75k</option>
+                    <option value="Above 75k">Above 75k</option>
+                    <option value="Confidenntial">Confidential</option>
                 </select>
                 <label htmlFor="location">Location</label>
                 <input type="text" placeholder="eg. India" name="location" value={jobForm.joblocation} onChange={e=>{
@@ -104,10 +129,10 @@ export function AddJobScreen({addFunction}:Props){
                     }))
                 }}/>
                 <label htmlFor="companyDescription">Company Description</label>
-                <textarea name="companyDescription" id="companyDescription" placeholder="Add your company information here." value={jobForm.compannyDecsription} onChange={e=>{
+                <textarea name="companyDescription" id="companyDescription" placeholder="Add your company information here." value={jobForm.companyDescription} onChange={e=>{
                     setJobForm(prev=>({
                         ...prev,
-                        compannyDecsription:e.target.value
+                        companyDescription:e.target.value
                     }))
                 }}></textarea>
                 <label htmlFor="contactEmail">Contact Email</label>

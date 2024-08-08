@@ -1,5 +1,7 @@
 import '../CSS/SingelJobPage.css'
-import { LoaderFunctionArgs } from 'react-router-dom';
+import { LoaderFunctionArgs, useNavigate } from 'react-router-dom';
+import {toast} from 'react-toastify'
+import { Link } from 'react-router-dom';
 
 interface Company {
     name: string;
@@ -18,6 +20,27 @@ interface Props{
             company: Company;};
 }
 function SingelJobPage({job}:Props){
+    
+    const navigate = useNavigate();
+    const deleteJob = async(id:string)=>{
+        try {
+            const response = await fetch(`http://localhost:3001/deleteJob/${id}`, {
+              method: "DELETE",
+            });
+        
+            if (response.ok) {
+              toast.success('Job Deleted Successfully!!')
+              navigate('/jobs');
+            } else {
+              // Handle error (e.g., show an error message)
+              console.error('Error deleting job');
+            }
+          } catch (error) {
+            // Handle network or other errors
+            console.error('Network error:', error);
+          }
+    };
+
     return (
         <>
             <div className="singelJobPage">
@@ -46,8 +69,8 @@ function SingelJobPage({job}:Props){
                         </div>
                         <div className='manageJob'>
                             <h3 className="jobInfoTitle2">Manage Job</h3>
-                            <button className='jobButton'>Edit Job</button>
-                            <button className='jobButton'>Delete Job</button>
+                            <button className='jobButton'><Link to={`/updateJobs/${job._id}`}>Edit Job</Link></button>
+                            <button className='jobButton' onClick={()=>deleteJob(job._id)}>Delete Job</button>
                         </div>
                     </div>
                 </div>
@@ -64,4 +87,6 @@ async function jobLoder ({params}:LoaderFunctionArgs):Promise<any>{
     const response = await fetch(`http://localhost:3001/getJobs/${params.id}`)
     return response.json();
 }
-export {SingelJobPage as default, jobLoder};
+
+
+export  {SingelJobPage as default,jobLoder} ;

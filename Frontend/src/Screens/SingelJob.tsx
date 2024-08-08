@@ -1,5 +1,7 @@
+import { useEffect } from "react";
 import SingelJobPage from "../components/SingelJobPage"
-import { useLoaderData } from "react-router-dom"
+import { useLoaderData ,useRevalidator} from "react-router-dom"
+
 
 interface Company {
     name: string;
@@ -19,11 +21,17 @@ interface Job {
     company: Company;
 }
 
-export function SingelJob(){
+function SingelJob(){
     const job = useLoaderData() as Job;
+    const revalidator = useRevalidator();
+
+    useEffect(() => {
+        revalidator.revalidate();  // Manually trigger revalidation
+    }, []);
     return (
         <>
             <SingelJobPage job={job}/>
         </>
     )
 }
+export default SingelJob;

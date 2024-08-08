@@ -6,7 +6,6 @@ const CompanySchema = new mongoose.Schema({
     contactPhone:String
 });
 const JobSchema = new mongoose.Schema({
-    id:String,
     title:String,
     type:String,
     description:String,

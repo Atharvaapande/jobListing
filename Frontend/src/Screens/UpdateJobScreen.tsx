@@ -62,7 +62,7 @@ export function UpdateJobScreen({updateFunction}:Props){
         }
         updateFunction(updatedJob); 
         toast.success('Job Updated Successfully!!')
-        return Navigate(`/jobs`);
+        return Navigate(`/jobs/${job._id}`);
     }
 
     if (!job) {

@@ -40,10 +40,15 @@ function SingelJobPage({job}:Props){
             console.error('Network error:', error);
           }
     };
+    function handelApply(){
+        toast.success('Successfully Applied!')
+        navigate('/jobs')
+    }
 
     return (
         <>
             <div className="singelJobPage">
+                <button className='backBtn' onClick={()=>navigate('/jobs')}>Back To All Jobs</button>
                 <div className="jobInfoWrap">
                     <div className='leftPanel'>
                         <div className='jobInfo'>
@@ -55,6 +60,7 @@ function SingelJobPage({job}:Props){
                             <p className='jobInfoDescriptionContent'>{job?.description}</p>
                             <h3 className='jobInfoTitle2'>Salary</h3>
                             <p className='jobInfoDescriptionContent'>{job?.salary}</p>
+                            <button className='apply' onClick={handelApply}>Apply</button>
                         </div>
                     </div>
                     <div className='rightPanel'>
@@ -69,7 +75,7 @@ function SingelJobPage({job}:Props){
                         </div>
                         <div className='manageJob'>
                             <h3 className="jobInfoTitle2">Manage Job</h3>
-                            <button className='jobButton'><Link to={`/updateJobs/${job._id}`}>Edit Job</Link></button>
+                            <Link to={`/updateJobs/${job._id}`} className='Link'><button className='jobButton'>Edit Job</button></Link>
                             <button className='jobButton' onClick={()=>deleteJob(job._id)}>Delete Job</button>
                         </div>
                     </div>
